@@ -1,0 +1,14 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "idea"
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile  'org.projectlombok:lombok:1.16.6'
+
+    testCompile "junit:junit:4.10"
+    testCompile "org.easytesting:fest-assert-core:2.0M10"
+}
