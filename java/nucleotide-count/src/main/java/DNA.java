@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class DNA {
 
-    private Map<Character, Integer> dnaCount = new HashMap<Character, Integer>() {{
+    private final Map<Character, Integer> dnaCount = new HashMap<Character, Integer>() {{
         put('A', 0);
         put('C', 0);
         put('G', 0);
@@ -27,5 +27,4 @@ public class DNA {
     public Map<Character, Integer> nucleotideCounts() {
         return dnaCount;
     }
-
 }
