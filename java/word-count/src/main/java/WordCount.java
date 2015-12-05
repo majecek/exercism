@@ -9,11 +9,11 @@ public class WordCount {
 
     public Map<String, Integer> Phrase(String word) {
         Pattern pattern = Pattern.compile("\\w+");
-        Matcher matcher = pattern.matcher(word);
+        Matcher matcher = pattern.matcher(word.toLowerCase());
 
         while (matcher.find()) {
-            int wordCount = splitMap.get(matcher.group().toLowerCase()) != null ? splitMap.get(matcher.group().toLowerCase()) : 0;
-            splitMap.put(matcher.group().toLowerCase(), wordCount + 1);
+            int wordCount = splitMap.get(matcher.group()) != null ? splitMap.get(matcher.group()) : 0;
+            splitMap.put(matcher.group(), wordCount + 1);
         }
         return splitMap;
     }
