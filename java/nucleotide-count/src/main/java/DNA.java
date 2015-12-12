@@ -11,9 +11,7 @@ public class DNA {
     }};
 
     public DNA(String dnaString) {
-        for (char dnaChar : dnaString.toCharArray()) {
-            dnaCount.put(dnaChar, dnaCount.get(dnaChar) + 1);
-        }
+        dnaString.chars().mapToObj(i -> (char) i).forEach(c -> dnaCount.put(c, dnaCount.get(c) + 1));
     }
 
     public int count(char dnaCharacter) {
