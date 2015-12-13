@@ -1,16 +1,14 @@
-public class Hamming {
-    public static int compute(String a, String b) {
-        int result = 0;
+import java.util.stream.IntStream;
 
-        if (a.length() != b.length()) {
+public class Hamming {
+    public static int compute(String firstStrand, String secondStrand) {
+
+        if (firstStrand.length() != secondStrand.length()) {
             throw new IllegalArgumentException("Different sizes of arguments");
         }
 
-        for (int i = 0; i < a.length(); i++) {
-            if (a.charAt(i) != b.charAt(i)) {
-                result++;
-            }
-        }
-        return result;
+       return (int)IntStream.range(0, firstStrand.length())
+                    .filter(i -> firstStrand.charAt(i) != secondStrand.charAt(i))
+                    .count();
     }
 }
